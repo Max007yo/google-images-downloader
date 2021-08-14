@@ -89,7 +89,9 @@ app.all('*', (req, res) => {
     res.send('<h1>404 Requested URL Not Found!</h1>');
 });
 
+const PORT = process.env.PORT || 3000;
+
 // SERVER
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('listening on PORT:3000');
 });
