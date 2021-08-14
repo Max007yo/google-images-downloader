@@ -8,7 +8,12 @@ const imagesSelector = '#islrg > div.islrc > div > a:nth-child(1)';
 const loadMoreInputBoxSelector = '#islmp > div > div > div > div.gBPM8 > div.qvfT1 > div.YstHxe';
 const msgBoxSelector = '#islmp > div > div > div > div.gBPM8 > div.qvfT1 > div.DwpMZe > div.OuJzKb.Bqq24e';
 module.exports = async function (googleSearch, numOfImages, downloadStatus) {
-    const browser = await puppeteer_1.default.launch();
+    const browser = await puppeteer_1.default.launch({
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+  ],
+});
     const page = await browser.newPage();
     const searchUrl = new url_1.URL('https://www.google.com/search?tbm=isch');
     searchUrl.searchParams.append('q', googleSearch);
