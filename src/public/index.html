@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Image Downloader</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img class="icon100" src="img/logo-google.svg" alt="google">
+            <h1>Image Downloader</h1>
+        </div>
+        <form action="/download" method="GET">
+            <input type="text" name="q" value="trending meme india"/>
+            <input type="number" name="n" value="50"/>
+            <input id="downloadId" type="hidden" name="id" value=""/>
+            <input type="submit" value=""/>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuidv4.min.js" integrity="sha512-BCMqEPl2dokU3T/EFba7jrfL4FxgY6ryUh4rRC9feZw4yWUslZ3Uf/lPZ5/5UlEjn4prlQTRfIPYQkDrLCZJXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const idInput = document.getElementById('downloadId');
+        idInput.value = uuidv4();
+    </script>
+</body>
+</html>
